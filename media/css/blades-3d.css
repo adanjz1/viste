@@ -1,0 +1,294 @@
+/* --------------------------------------------- */
+/* Author: http://codecanyon.net/user/CodingJack */
+/* --------------------------------------------- */
+
+/* Main Banner Container */
+.blades-3d {
+
+	position: relative;
+	
+	/* Set the width and height of the container to prevent other 
+	   content on the page from "jumping" when the page first loads */
+	/*
+	width: 700px;
+	height: 300px;
+	*/
+	
+	-webkit-transform-origin: left top;
+	-moz-transform-origin: left top;
+	-ms-transform-origin: left top;
+	-o-transform-origin: left top;
+	transform-origin: left top;
+
+}
+
+/* Set the initial background color here */
+.blades-plane {
+	
+	background-color: #222;
+
+}
+
+/* Represents slogan container */
+.blades-slide {
+	
+	/* SET THE SLOGAN FONT HERE */
+	font: 24px 'Yanone Kaffeesatz', sans-serif;
+	line-height: 36px;
+	
+	position: absolute;
+	visibility: hidden;
+	overflow: hidden;
+	top: 0;
+	left: 0;
+	
+}
+
+/* Slogan Text */
+.blades-slide span {
+	
+	/* SLOGAN PADDING GETS SET HERE */
+	padding: 6px 10px 6px 10px;
+	
+	display: inline-block;
+	position: absolute;
+	visibility: hidden;
+	
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+	
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	
+}
+
+/* Left aligned slogan scale origin */
+.blades-slide span[data-align="left"] {
+
+	-webkit-transform-origin: left top;
+	-moz-transform-origin: left top;
+	-ms-transform-origin: left top;
+	-o-transform-origin: left top;
+	transform-origin: left top;
+	
+}
+
+/* Right aligned slogan scale origin */
+.blades-slide span[data-align="right"] {
+
+	-webkit-transform-origin: right top;
+	-moz-transform-origin: right top;
+	-ms-transform-origin: right top;
+	-o-transform-origin: right top;
+	transform-origin: right top;
+	
+}
+
+/* Hyperlinks inherit the slogan's normal text color */
+.blades-slide span a,
+.blades-slide span a:visited {
+
+	color: inherit;
+	
+}
+
+/* Hyperlink hover */
+.blades-slide span a:hover {
+
+	text-decoration: none;
+	
+}
+
+/* Container for left/right buttons */
+.blades-controls {
+
+	position: absolute;
+	bottom: 10px;
+	left: 0;
+	width: 100%;
+	z-index: 999;
+	opacity: 0;
+	
+}
+
+/* class gets added except when ie8 is detected */
+.blades-controls-fix {
+
+	visibility: hidden;
+	
+}
+
+/* Safari 5 doesn't handle this transition well, 
+so it only gets added when Safari 5 is not detected */
+.blades-controls-trans {
+
+	-webkit-transition: all 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000);
+	-moz-transition: all 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000);
+	-o-transition: all 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000);
+	-ms-transition: all 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000);
+	transition: all 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000);
+	
+}
+
+/* Class gets toggled to show/hide the controls */
+.blades-controls-on {
+
+	visibility: visible;
+	opacity: 1;
+	
+}
+
+/* Main class for both left/right buttons */
+.blades-btn {
+
+	display: block;
+	cursor: pointer;
+	
+	width: 30px;
+	height: 30px;
+	
+	border-radius: 50%;
+	border-radius: 50%;
+	
+	border-style: solid;
+	border-width: 1px;
+	border-top-color: #FFF;
+	border-left-color: #EBEBEB;
+	border-right-color: #EBEBEB;
+	border-bottom-color: #D8D8D8;
+
+	background: #E0E0E0;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #FFF), color-stop(100%, #C1C1C1)); /* Safari 5 */
+	background: linear-gradient(to bottom, #FFF 0%, #C1C1C1 100%); 
+	
+}
+
+/* border doesn't that great on IE10 so this removes it */
+.blades-btn-ie10 .blades-btn{
+
+	border-width: 0;
+	
+}
+
+/* Left/right button hover */
+.blades-btn:hover {
+	
+	border-top-color: #D8D8D8;
+	border-bottom-color: #FFF;
+	
+	background: #E0E0E0;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #C1C1C1), color-stop(100%, #FFF)); /* Safari 5 */
+	background: linear-gradient(to bottom, #C1C1C1 0%, #FFF 100%); 
+	
+}
+
+/* Left button only */
+.blades-btn-left {
+	
+	float: left;
+	margin-left: 10px;
+	box-shadow: -1px 1px 2px rgba(0, 0, 0, 0.2);
+	
+	-webkit-transform-origin: left bottom;
+	-moz-transform-origin: left bottom;
+	-ms-transform-origin: left bottom;
+	-o-transform-origin: left bottom;
+	transform-origin: left bottom;
+	
+}
+
+/* Right button only */
+.blades-btn-right {
+	
+	float: right;
+	margin-right: 10px;
+	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+	
+	-webkit-transform-origin: right bottom;
+	-moz-transform-origin: right bottom;
+	-ms-transform-origin: right bottom;
+	-o-transform-origin: right bottom;
+	transform-origin: right bottom;
+	
+}
+
+/* Font Awesome icon */
+.blades-btn i {
+
+	display: inline-block;
+	font-size: 19px;
+	color: #BAB9B9;
+	
+}
+
+/* Font Awesome left icon */
+.blades-btn-left i {
+
+	margin: 6px 0 0 8px;
+	text-shadow: -1px 1px 0 #FFF, 1px -1px 0 #888;
+	
+}
+
+/* Font Awesome right icon */
+.blades-btn-right i {
+
+	margin: 6px 0 0 11px;
+	text-shadow: 1px 1px 0 #FFF, -1px -1px 0 #888;
+	
+}
+
+/* Flipped squares container */
+.blades-container {
+
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 0;
+	
+}
+
+/* Represents a square */
+.blades-panel {
+
+	position: absolute;
+	outline: 3px solid transparent;
+	
+}
+
+/* Represents a 3d plane inside a square */
+.blades-plane {
+	
+	display: block;
+	position: absolute;
+	top:0;
+	left: 0;
+	
+	background-repeat: no-repeat;
+	outline: 3px solid transparent;
+
+}
+
+/* overflow is hidden for small screens */
+.blades-responsive {
+	
+	overflow: hidden;
+	
+}
+
+/* improves scaled appearance */
+.blades-responsive .blades-panel,
+.blades-responsive .blades-plane {
+
+	outline: none;
+	
+}
+
+/* Hides info when responsive if optioned */
+.blades-hide-info {
+
+	display: none !important;
+	
+}
